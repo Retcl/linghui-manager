@@ -20,6 +20,8 @@
     <datasource.port>${env.POSTGRES_PORT}</datasource.port>
     <datasource.username>${env.POSTGRES_USERNAME}</datasource.username>
     <datasource.password>${env.POSTGRES_PASSWORD}</datasource.password>
+
+    <token.secret>${env.JWT_SECRET}</token.secret>
   </properties>
 
   <dependencies>
@@ -60,6 +62,12 @@
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
       <version>2.0.46</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.12.5</version>
     </dependency>
   </dependencies>
 
