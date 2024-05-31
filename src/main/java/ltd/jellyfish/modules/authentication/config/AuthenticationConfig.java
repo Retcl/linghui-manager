@@ -24,6 +24,10 @@ public class AuthenticationConfig {
      */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests((request) -> {
+            request.anyRequest().permitAll();
+        });
+        
         return http.build();
     }
 
