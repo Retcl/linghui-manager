@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import ltd.jellyfish.models.RoleToUser;
 
-@Repository
+@Repository("UserData-RoleUserRepo")
 public interface RoleToUsersRepository extends JpaRepository<RoleToUser, String> {
     
 }

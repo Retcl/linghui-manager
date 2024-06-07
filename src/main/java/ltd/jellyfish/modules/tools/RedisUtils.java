@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import ltd.jellyfish.modules.authentication.models.ToeknStorage;
 import ltd.jellyfish.modules.tools.models.TokenOutMessage;
 
 @Configuration

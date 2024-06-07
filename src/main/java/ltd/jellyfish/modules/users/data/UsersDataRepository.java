@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import ltd.jellyfish.models.Users;
 
-@Repository
+@Repository("userData-DataRepo")
 public interface UsersDataRepository extends JpaRepository<Users, String> {
 
 }

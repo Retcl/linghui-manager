@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-App<linghui-manager>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "ltd.jellyfish.App",
+            "projectName": "linghui-manager",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

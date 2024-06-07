@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import ltd.jellyfish.models.AuthenticationRole;
 
-@Repository
+@Repository("UserData-AothData")
 public interface AuthenticationRoleRepository extends JpaRepository<AuthenticationRole, String> {
 
 }
