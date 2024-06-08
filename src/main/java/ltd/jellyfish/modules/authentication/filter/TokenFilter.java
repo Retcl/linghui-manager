@@ -57,7 +57,7 @@ public class TokenFilter extends OncePerRequestFilter {
                     for (String useTokenPath : needTokenPaths) {
                         if (url.equals(useTokenPath)) {
                             String token = request.getHeader("X-Request-Token");
-                            if (token != null || !token.isEmpty()) {
+                            if (token != null && !token.isEmpty()) {
                                 if (!redisUtils.isTokenOut(token)) {
                                     String username = jwtUtils.getToeknUsername(token);
                                     if (username != null && !username.isEmpty()
@@ -88,7 +88,7 @@ public class TokenFilter extends OncePerRequestFilter {
                     for (String unuseTokenPath : unuseList) {
                         if (!url.equals(unuseTokenPath)) {
                             String token = request.getHeader("X-Request-Token");
-                            if (token != null || !token.isEmpty()) {
+                            if (token != null && !token.isEmpty()) {
                                 if (!redisUtils.isTokenOut(token)) {
                                     String username = jwtUtils.getToeknUsername(token);
                                     if (username != null && !username.isEmpty()
@@ -102,6 +102,8 @@ public class TokenFilter extends OncePerRequestFilter {
                             } else {
                                 fail(request, response);
                             }
+                        } else {
+                            break;
                         }
                     }
                 } catch (ClassNotFoundException | IOException e) {
