@@ -73,12 +73,8 @@ public class TokenFilter extends OncePerRequestFilter {
                             }
                         }
                     }
-                } catch (ClassNotFoundException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                } catch (ClassNotFoundException | IOException e) {
+                    fail(request, response);
                 }
             } else {
                 UnuseTokenAnnotationConfig unuseTokenAnnotationConfig = new UnuseTokenAnnotationConfig();
@@ -107,8 +103,7 @@ public class TokenFilter extends OncePerRequestFilter {
                         }
                     }
                 } catch (ClassNotFoundException | IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    fail(request, response);
                 }
             }
 

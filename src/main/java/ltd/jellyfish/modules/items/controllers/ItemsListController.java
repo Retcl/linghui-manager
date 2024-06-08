@@ -16,12 +16,13 @@ public record ItemsListController(
     ItemListService itemListService
 ) {
 
-    // @UnuseToken
+    @UnuseToken
     @GetMapping("/item/list")
     public Result<List<ItemPriceDTO>> itemsList(){
         return itemListService.getItemLists();
     }
 
+    @UnuseToken
     @GetMapping("/history/prices")
     public Result<List<Prices>> itemPricesHistory(String itemId) {
         return itemListService.priceHistory(itemId);
