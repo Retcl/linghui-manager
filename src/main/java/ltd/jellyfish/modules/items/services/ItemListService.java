@@ -55,4 +55,16 @@ public record ItemListService(
         reply.setData(itemPriceDTOs);
         return reply;
     }
+
+    public Result<List<Prices>> priceHistory(String itemId) {
+        Result<List<Prices>> reply = new Result<>();
+        List<Prices> pricesList = new ArrayList<>();
+        Prices prices = new Prices();
+        prices.setItemId(itemId);
+        Example<Prices> pricesExample = Example.of(prices);
+        pricesList = pricesDataRepository.findAll(pricesExample);
+        reply.setData(pricesList);
+        reply.setSuccess(true);
+        return reply;
+    }
 }

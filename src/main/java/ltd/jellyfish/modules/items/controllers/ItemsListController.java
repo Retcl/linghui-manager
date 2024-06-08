@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ltd.jellyfish.models.Result;
 import ltd.jellyfish.modules.items.models.ItemPriceDTO;
+import ltd.jellyfish.modules.items.models.Prices;
 import ltd.jellyfish.modules.items.services.ItemListService;
 
 @RestController
@@ -17,5 +18,10 @@ public record ItemsListController(
     @GetMapping("/item/list")
     public Result<List<ItemPriceDTO>> itemsList(){
         return itemListService.getItemLists();
+    }
+
+    @GetMapping("/history/prices")
+    public Result<List<Prices>> itemPricesHistory(String itemId) {
+        return itemListService.priceHistory(itemId);
     }
 }
