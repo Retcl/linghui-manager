@@ -15,19 +15,15 @@
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <datasource.host>${env.POSTGRES_HOST}</datasource.host>
-    <datasource.port>${env.POSTGRES_PORT}</datasource.port>
-    <datasource.username>${env.POSTGRES_USERNAME}</datasource.username>
-    <datasource.password>${env.POSTGRES_PASSWORD}</datasource.password>
-
-    <token.secret>${env.JWT_SECRET}</token.secret>
-
-    <datasource.redis.host>${env.REDIS_HOST}</datasource.redis.host>
-    <datasource.redis.password>${env.REDIS_PASSWORD}</datasource.redis.password>
   </properties>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
